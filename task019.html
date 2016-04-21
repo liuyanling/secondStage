@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>任务十九</title>
+    <style type="text/css">
+        fieldset{
+            padding: 16px;
+            margin: 25px auto;
+            width: 1228px;
+            border-radius: 6px;
+        }
+        button,select,input{
+            height: 32px;
+            font-size: 18px;
+            width: 90px;
+            margin:10px;
+            cursor: pointer;
+            border: 2px outset;
+            border-radius: 6px;
+
+        }
+        input{
+            width: 200px!important;
+            height: 25px!important;
+            border:inset;
+        }
+        #inputTime{
+            width:84px!important;
+        }
+        b{
+            font-size: 20px;
+            display: inline-block;
+            background-color: rgb(20, 198, 223);
+            border-radius: 13px;
+            line-height: 33px;
+        }
+
+        #display{
+            display: flex;
+            align-items: flex-end;
+            width: 1264px;
+            margin: 0 auto;
+        }
+        .bar{
+
+               margin-right:10px;
+           }
+    </style>
+</head>
+<body>
+<fieldset>
+    <legend>表单输入</legend>
+    <input id="inputData" type="text" placeholder="请输入10--100内整数">
+    <button id="leftInput" type="button">左侧入</button>
+    <button id="rightInput" type="button">右侧入</button>
+    <button id="leftOutput" type="button">左侧出</button>
+    <button id="rightOutput" type="button">右侧出</button>
+    <button id="random" type="button">随机生成</button>
+    <button id="sort" type="button">排序</button>
+    &nbsp;&nbsp;
+    <b>interval(ms):</b>
+    <input id="inputTime" type="text" />
+</fieldset>
+<div id="display"></div>
+<script src="task019.js" type="text/javascript" charset="GBK"></script>
+</body>
+</html>
