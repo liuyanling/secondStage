@@ -1,0 +1,23 @@
+﻿*{
+    padding:0px;
+    margin:0px;
+}
+input{
+    width: 205px;
+    margin: 30px 5px;
+}
+textarea{
+    height: 80px;
+    width: 200px;
+}
+#center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#hobbyDisplay div,#tagDisplay div{
+    display:inline-block;
+    background-color: #cc3333;
+    margin:10px;
+    padding: 10px;
+}

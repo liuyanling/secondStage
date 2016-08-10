@@ -1,0 +1,25 @@
+label{
+    height: 80px;
+    margin: 20% 20%;
+    display: block;
+}
+input{
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #a8a8a8;
+    padding-left: 10px;
+}
+#btn{
+    background-color: #2F79BA;
+    border: 2px solid white;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+    font-size:20px;
+}
+#tip{
+    color: #a8a8a8;
+    padding-left: 2rem;
+}

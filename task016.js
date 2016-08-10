@@ -1,28 +1,17 @@
-/**
+ï»¿/**
  * Created by Administrator on 16-4-19.
  */
-/**
- * aqiData£¬´æ´¢ÓÃ»§ÊäÈëµÄ¿ÕÆøÖ¸ÊıÊı¾İ
- * Ê¾Àı¸ñÊ½£º
- * aqiData = {
- *    "±±¾©": 90,
- *    "ÉÏº£": 40
- * };
- */
+
 var aqiData = {};
 
-/**
- * ´ÓÓÃ»§ÊäÈëÖĞ»ñÈ¡Êı¾İ£¬ÏòaqiDataÖĞÔö¼ÓÒ»ÌõÊı¾İ
- * È»ºóäÖÈ¾aqi-listÁĞ±í£¬Ôö¼ÓĞÂÔöµÄÊı¾İ
- */
 function addAqiData() {
     var city=document.getElementById("aqi-city-input").value.trim();
     var airData=document.getElementById("aqi-value-input").value.trim();
     if(!(city.match(/^[A-Za-z\u4E00-\u9FA5]+$/))){
-        alert("ÇëÊäÈëºÏ·¨µÄ³ÇÊĞÃû£¡");
+        alert("åŸå¸‚åå¿…é¡»ä¸ºä¸­è‹±æ–‡å­—ç¬¦ï¼");
     }
     if(!(airData.match(/^\d+$/))){
-        alert("ÇëÊäÈëºÏ·¨µÄ¿ÕÆøÖÊÁ¿£¡");
+        alert("ç©ºæ°”è´¨é‡æŒ‡æ•°å¿…é¡»ä¸ºæ•´æ•°ï¼");
     }
     if(city.match(/^[A-Za-z\u4E00-\u9FA5]+$/)&&airData.match(/^\d+$/)){
         aqiData[city]=airData;
@@ -30,31 +19,23 @@ function addAqiData() {
     return aqiData;
 }
 
-/**
- * äÖÈ¾aqi-table±í¸ñ
- */
+
 function renderAqiList() {
-    var innerHtml="<tr><td>³ÇÊĞ</td><td>¿ÕÆøÖÊÁ¿</td><td>²Ù×÷</td></tr>";
+    var innerHtml="<tr><td>åŸå¸‚</td><td>ç©ºæ°”è´¨é‡</td><td>æ“ä½œ</td></tr>";
     var table=document.getElementById("aqi-table");
     for(var city in aqiData) {
-        innerHtml += "<tr><td>"+city+"</td><td>"+aqiData[city]+"</td><td><button class='delete'>É¾³ı</button></td></tr>"
+        innerHtml += "<tr><td>"+city+"</td><td>"+aqiData[city]+"</td><td><button class='delete'>åˆ é™¤</button></td></tr>"
     }
     table.innerHTML=innerHtml;
 }
 
-/**
- * µã»÷add-btnÊ±µÄ´¦ÀíÂß¼­
- * »ñÈ¡ÓÃ»§ÊäÈë£¬¸üĞÂÊı¾İ£¬²¢½øĞĞÒ³Ãæ³ÊÏÖµÄ¸üĞÂ
- */
+
 function addBtnHandle() {
     addAqiData();
     renderAqiList();
 }
 
-/**
- * µã»÷¸÷¸öÉ¾³ı°´Å¥µÄÊ±ºòµÄ´¦ÀíÂß¼­
- * »ñÈ¡ÄÄ¸ö³ÇÊĞÊı¾İ±»É¾£¬É¾³ıÊı¾İ£¬¸üĞÂ±í¸ñÏÔÊ¾
- */
+
 function delBtnHandle(event) {
     var actBtn=event.target;
     var delCity=(actBtn.parentElement.parentElement.children)[0].innerHTML;
@@ -73,14 +54,12 @@ var EventUtil = {
     }
 };
 function init() {
-    // ÔÚÕâÏÂÃæ¸øadd-btn°ó¶¨Ò»¸öµã»÷ÊÂ¼ş£¬µã»÷Ê±´¥·¢addBtnHandleº¯Êı
-    // Ïë°ì·¨¸øaqi-tableÖĞµÄËùÓĞÉ¾³ı°´Å¥°ó¶¨ÊÂ¼ş£¬´¥·¢delBtnHandleº¯Êı
+    
     var buttonS=document.getElementById("add-btn");
     EventUtil.addHandler(buttonS,'click',addBtnHandle);
     var table=document.getElementById("aqi-table");
     EventUtil.addHandler(table,'click',function(event){delBtnHandle(event);});
 }
-window.onload=function(){       //Î´¼Ówindow.onload=function(){}»á³öÏÖ±¨´í£º
-  // Uncaught TypeError: Cannot read property 'addEventListener' of null
+window.onload=function(){       
     return init();
 };

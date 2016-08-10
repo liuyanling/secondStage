@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/task030.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <form>
+        <fieldset>
+            <legend>一个简单的带验证提示的表单</legend>
+            <p>
+                <label>名称</label> <em>*</em>
+                <input type="text" id="cusername" name="username"/>
+            </p>
+            <p class="hint" id="cusernameHint" >必填，长度为4~16位字符
+            </p>
+            <em class="em0"></em>
+
+            <p><label>密码</label><em>*</em>
+                <input type="password" id="password"/></p>
+            <p class="hint" id="passwordHint">
+                必填，长度为4~16位字符,包含字母和数字
+            </p>
+            <em class="em1"></em>
+
+            <p><label>确认密码</label><em>*</em>
+                <input type="password" id="confirmpd"/>
+            <p class="hint" id="confirmpdHint">
+                必填，必须与密码相同
+            </p>
+            <em class="em2"></em>
+
+            <p><label>邮箱</label><em>*</em>
+                <input type="text" id="cemail" name="email"/>
+            </p>
+            <p class="hint" id="cemailHint">
+                填写正确的邮箱格式
+            </p>
+            <em class="em3"></em>
+
+            <p><label>手机</label><em>*</em>
+               <input type="text" id="phone"/>
+            </p>
+            <p class="hint" id="phoneHint">
+                填写正确的手机号码
+            </p>
+            <em class="em4"></em>
+
+            <button id="submit">提交</button>
+        </fieldset>
+    </form>
+</div>
+<script type="text/javascript" src="js/task030.js"></script>
+<script type="text/javascript" src="js/EventUtil.js"></script>
+</body>
+</html>

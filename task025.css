@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+fieldset {
+    width: 600px;
+    margin: 30px auto;
+    border-radius: 5px;
+	border-style: dotted;
+}
+legend {
+    font-size: 60px;
+}
+fieldset input {
+	width:200px;
+	
+}
+fieldset button {
+    height: 24px;
+   
+}
+.center{
+	float:right;
+	margin-right:30px;
+}
+.root {
+	font-size:18px;
+	color:#607D8B;
+	margin-top:70px;
+}
+ul {
+    list-style: none;
+    padding-left: 30px;
+	font-weight:900;
+}
+.title:hover {
+    color: #ff0000;
+}
+.menu {
+    display: inline-block;
+    margin-left: 20px;
+    color: #CA6363;
+}
+.menu span {
+    display: inline-block;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+.shows{
+	color:#E24F40;
+}

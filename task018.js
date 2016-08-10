@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Created by Administrator on 16-4-19.
  */
 
@@ -13,7 +13,7 @@ var EventUtil = {
         }
     }
 };
-var data=[];
+var data=[]; //全局
 var render=function(){
     var dataS=data.map(function (item){
         return "<div>"+item+"</div>";
@@ -32,16 +32,13 @@ var rightInput=function(){
     render();
 };
 var leftOutput=function(){
-
     data.shift();
     render();
 };
 var rightOutput=function(){
-
     data.pop();
     render();
 };
-
 function init(){
     var button=document.getElementsByTagName("button");
     var functions=[leftInput,rightInput,leftOutput,rightOutput];
@@ -49,8 +46,9 @@ function init(){
         EventUtil.addHandler(button[i],'click',functions[i]);
     }
     EventUtil.addHandler(document.getElementById("display"),'click',function(event){
-        var del=parseInt(event.target.innerHTML);
-        data.splice(data.indexOf(del),1);
+        var index = [].indexOf.call(event.target.parentNode.childNodes, event.target);//所点击元素是元素类数组的第几个，即下标
+        data.splice(index, 1);
+      
         render();
     });
 }

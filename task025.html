@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task025</title>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/task025.css">
+</head>
+<body>
+<fieldset>
+    <legend>树型组件</legend>
+    <div class="center">
+        <input type="text" placeholder="搜索节点" id="search_text">
+        <button id="search_btn">搜索</button>
+		<p>(单击右键，增加节点与删除节点)</p>
+    </div>
+    <ul class="tree">
+        <li class="root">
+            <p>
+                <i class="iconfont icon-down">&nbsp;</i>
+                <span class="title" >Web学习</span>
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        <i class="iconfont icon-down">&nbsp;</i>
+                        <span class="title">结构层(HTML)</span>
+                    </p>
+                    <ul>
+                        <li>
+                            <p>
+                                <span class="title">HTML</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="title">XHTML</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="title">HTML5</span>
+                            </p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>
+                        <i class="iconfont icon-down">&nbsp;</i>
+                        <span class="title">表示层(CSS)</span>
+                    </p>
+                    <ul>
+                        <li>
+                            <p>
+                                <span class="title">CSS2.0</span>
+                            </p>
+                        </li>
+						<li>
+                            <p>
+                                <span class="title">CSS3</span>
+                            </p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>
+                        <i class="iconfont icon-down">&nbsp;</i>
+                        <span class="title">行为层(JS及DOM)</span>
+                    </p>
+                    <ul>
+                        <li>
+                            <p>
+                                <i class="iconfont icon-down">&nbsp;</i>
+                                <span class="title">JS</span>
+                            </p>
+                            <ul>
+								<li>
+									<p>
+										<i class="iconfont icon-down">&nbsp;</i>
+										<span class="title">ECMAscript</span>
+									</p>
+                                    <ul>
+										<li>
+											<p>
+												<span class="title">ECMAscript5</span>
+											</p>
+										</li>
+										<li>
+											<p>
+												<span class="title">ECMAscript6</span>
+											</p>
+										</li>
+									</ul>
+								</li>
+                            </ul>
+                        </li>
+						<li>
+                            <p>
+                                <i class="iconfont icon-down">&nbsp;</i>
+                                <span class="title">DOM</span>
+                            </p>
+                            <ul>                                                                   
+								<li>
+                                    <p>
+                                        <span class="title">添加节点</span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <span class="title">删除节点</span>
+                                    </p>
+                                </li>
+								<li>
+                                    <p>
+                                        <span class="title">替换节点</span>
+                                    </p>
+                                </li>
+								<li>
+                                    <p>
+                                        <span class="title">插入节点</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+						
+                    </ul>
+                </li>
+				<li>
+                    <p>
+						<i class="iconfont icon-down">&nbsp;</i>
+                        <span class="title">库与框架</span>
+                    </p>
+                    <ul>
+                        <li>
+                            <p>
+                                <span class="title">jquery</span>
+                            </p>
+                        </li>
+						 <li>
+                            <p>
+                                <span class="title">bootstrap</span>
+                            </p>
+                        </li>
+                    </ul>                            
+                </li>
+            </ul>
+		</li>	
+    </ul>
+</fieldset>
+<div class="menu hidden">
+    <span id="add"><i class="iconfont icon-jia"></i> 添加</span>
+    <span id="delete"><i class="iconfont icon-trash"></i> 删除</span>
+    <span id="rename"><i class="iconfont icon-xiugaibi"></i> 重命名</span>
+</div>
+<script src="EventUtil.js"></script>
+<script src="js/task025.js" charset="GBK"></script>
+</body>
+</html>

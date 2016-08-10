@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link  rel="stylesheet"  type="text/css" href="css/task031.css"/>
+</head>
+<body>
+<fieldset>
+<legend>表单联动</legend>
+<div id="form-container">
+    <div id="radio-select" onchange="radioChange()">
+        <input type="radio" name="radiobutton" id="insRadio" checked="checked"> 在校生
+        <input type="radio" name="radiobutton" id="outsRadio"> 非在校生
+    </div>
+
+    <div class="inSchool">
+        <span>学校</span>
+        <select class="select" id="select1" onchange="selectDistrict()">
+            <option value="bj" >北京</option>
+            <option value="sh">上海</option>
+            <option value="gz">广州</option>
+        </select>
+
+        <select class="select" id="select2">
+            <option value="pku">北京大学</option>
+            <option value="thu" >清华大学</option>
+            <option value="bhu">北京航空航天大学</option>
+        </select>
+    </div>
+
+    <div class="outSchool hide">
+        <span>就业单位</span>
+        <input type="text" class="input">
+    </div>
+</div>
+</fieldset>
+<script src="js/task031.js"></script>
+</body>
+</html>

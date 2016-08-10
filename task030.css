@@ -1,0 +1,50 @@
+*{
+    font-weight: bold;
+}
+.container{
+    width: 800px;
+    margin: 0 auto;
+}
+fieldset{
+    margin: 100px 0;
+    width:800px;
+}
+input {
+    width: 300px;
+    height: 30px;
+    margin: 10px 0px;
+    float:right;
+}
+p{
+    line-height: 64px;
+    width: 500px;
+}
+.visible{
+    display: table-row;
+}
+.right{
+    color: green;
+    display: table-row;
+}
+.wrong{
+    color: red;
+    display: table-row;
+}
+.hint{
+    display: none;
+}
+button{
+    background-color: #09ACC1;
+    float: right;
+    width: 35px;
+    height: 45px;
+    margin-left: 20px;
+    width: 81px;
+    font-size: x-large;
+    border-radius: 10px;
+    border-style: outset;
+}
+
+
+
+

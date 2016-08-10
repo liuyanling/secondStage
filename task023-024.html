@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>task023</title>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    fieldset {
+        width: 1169px;
+		margin: 90px auto;
+		border: 4px #ccc double;
+		padding: 30px;
+		border-radius: 17px;
+	}
+    legend{
+	    font-size: 40px;
+        font-weight: 900;
+	}
+    .graph div {
+        display: flex;
+		flex-grow: 1;
+		justify-content: space-around;
+		align-items: center;
+		border: 2px solid #03A9F4;
+		background-color: #fff;
+		border-radius: 100px;
+		height: 300px;
+    }
+    
+    .root {
+        width: 100%;
+    }
+    
+    .root div {
+        height: 70%;
+		margin: 0px 15px;
+		
+    }
+    
+    .operator {
+        margin-top: -40px;
+        padding-left: 380px;
+    }
+    
+    .operator button {
+        box-radius:25px;
+        box-shadow: 3px 3px 10px #ccc;
+        padding: 5px;
+        background-color: gray-blue;
+        margin-right: 40px;
+		width:120px;
+    }
+    
+    .operator input {
+        outline: none;
+        height: 30px;
+        padding: 5px;
+    }
+    /*点击后的激活状态*/
+    .graph .active {
+        background-color: #FEF9D1;
+    }
+    .graph .transition {
+        background-color: #ccc;
+    }
+    .traversal, .search, .processNode {
+        margin: 15px 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+	  <legend>多叉树的动画遍历</legend>
+        <div class="graph">
+            <div class="root">
+                祖先元素
+                <div>
+                    父一
+                    <div>
+                        子一
+                        <div>孙一</div>                      
+                    </div>
+                    <div>
+                        子二
+                        <div>孙三</div>
+                    </div>
+                </div>
+                <div>
+                    父二
+                    <div>
+                        子二
+                        <div>
+                            孙四
+                            <div>曾孙1</div>
+                        </div>
+                        <div>孙五</div>
+                    </div>
+                </div>
+                <div>父三
+                    <div>子三</div>
+                </div>
+				<div>父四
+                    <div>子四</div>
+                </div>
+            </div>
+        </div>
+    </fieldset>				
+        <div class="operator">
+            <div class="traversal">
+                遍历:&nbsp;
+                <button id="traverseDF">先序遍历</button>
+                <button id="traverseBF">层序遍历</button>
+            </div>
+            <div class="processNode">
+                <label for="add">节点添加:</label>
+                <input type="text" name="add" id="add" placeholder="新节点内容">
+                <button id="addNode">add</button></button>
+                <button id="delNode">delete</button>
+            </div>
+			<div class="search">
+                <label for="search">查询:</label>
+                <input type="text" name="search" id="search" placeholder="添加查询词后点击搜索">
+                <button id="DFSearch">先序搜索</button>
+                <button id="BFSearch">层序搜索</button>
+            </div>
+        </div>
+
+    <script src="js/EventUtil.js" type="text/javascript" charset="GBK"></script>
+    <script src="js/task023.js" type="text/javascript" charset="GBK"></script>
+</body>
+</html>

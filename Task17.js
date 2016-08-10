@@ -1,7 +1,7 @@
-
-/* Êı¾İ¸ñÊ½ÑİÊ¾
+ï»¿
+/* æ•°æ®æ ¼å¼æ¼”ç¤º
  var aqiSourceData = {
- "±±¾©": {
+ "åŒ—äº¬": {
  "2016-01-01": 10,
  "2016-01-02": 10,
  "2016-01-03": 10,
@@ -10,7 +10,7 @@
  };
  */
 
-// ÒÔÏÂÁ½¸öº¯ÊıÓÃÓÚËæ»úÄ£ÄâÉú³É²âÊÔÊı¾İ
+// ä»¥ä¸‹ä¸¤ä¸ªå‡½æ•°ç”¨äºéšæœºæ¨¡æ‹Ÿç”Ÿæˆæµ‹è¯•æ•°æ®
 function getDateStr(dat) {
     var y = dat.getFullYear();
     var m = dat.getMonth() + 1;
@@ -32,29 +32,29 @@ function randomBuildData(seed) {
 }
 
 var aqiSourceData = {
-    "±±¾©": randomBuildData(500),
-    "ÉÏº£": randomBuildData(300),
-    "¹ãÖİ": randomBuildData(200),
-    "ÉîÛÚ": randomBuildData(100),
-    "³É¶¼": randomBuildData(300),
-    "Î÷°²": randomBuildData(500),
-    "¸£Öİ": randomBuildData(100),
-    "ÏÃÃÅ": randomBuildData(100),
-    "ÉòÑô": randomBuildData(500)
+    "åŒ—äº¬": randomBuildData(500),
+    "ä¸Šæµ·": randomBuildData(300),
+    "å¹¿å·": randomBuildData(200),
+    "æ·±åœ³": randomBuildData(100),
+    "æˆéƒ½": randomBuildData(300),
+    "è¥¿å®‰": randomBuildData(500),
+    "ç¦å·": randomBuildData(100),
+    "å¦é—¨": randomBuildData(100),
+    "æ²ˆé˜³": randomBuildData(500)
 };
 
-// ÓÃÓÚäÖÈ¾Í¼±íµÄÊı¾İ
+// ç”¨äºæ¸²æŸ“å›¾è¡¨çš„æ•°æ®
 var chartData = {
 };
 
-// ¼ÇÂ¼µ±Ç°Ò³ÃæµÄ±íµ¥Ñ¡Ïî
+// è®°å½•å½“å‰é¡µé¢çš„è¡¨å•é€‰é¡¹
 var pageState = {
     nowSelectCity: -1,
     nowGraTime: "day"
 };
 
 /**
- * äÖÈ¾Í¼±í
+ * æ¸²æŸ“å›¾è¡¨
  */
 var colorArray=["#258CC9","#EE0000","#C880FF","#FFB9B9","#13A7FF","#F1C022",
     "#E1C6F5","#FF108A","#FF728A", "#BBFFFF","#CD661D",
@@ -64,11 +64,11 @@ function renderChart() {
     var suzy=0;
 
     var divChart=document.getElementsByClassName("aqi-chart-wrap");
-    var cityArrays = Object.keys(aqiSourceData);//Êı×é["±±¾©"£¬"ÉÏº£"£¬¡£¡£¡£]
+    var cityArrays = Object.keys(aqiSourceData);//æ•°ç»„["åŒ—äº¬"ï¼Œ"ä¸Šæµ·"ï¼Œã€‚ã€‚ã€‚]
     if(pageState.nowGraTime==="day"){
         var cityBar={};
-           for (var keyss in aqiSourceData){// ÏëÒªµÃµ½Ò»¸ö cityBar;//ÓÃÓÚ´æ·Å¸÷³ÇÊĞµÄ¸÷insertHtml
-              //¶ÔÏó£¬´æµÄÊÇ£º´Ó"01-01£º253"ÖÁ"03-31:65"
+           for (var keyss in aqiSourceData){// æƒ³è¦å¾—åˆ°ä¸€ä¸ª cityBar;//ç”¨äºå­˜æ”¾å„åŸå¸‚çš„å„insertHtml
+              //å¯¹è±¡ï¼Œå­˜çš„æ˜¯ï¼šä»"01-01ï¼š253"è‡³"03-31:65"
                var keylength=Object.keys(aqiSourceData[keyss]);
                var lens=keylength.length; //91
                var insertHtml=" ";
@@ -102,20 +102,20 @@ function renderChart() {
   //  var barsize=[];
   //  var insertHtml=" ";
   //  var divChart=document.getElementsByClassName("aqi-chart-wrap");
- //   var cityArrays = Object.keys(aqiSourceData);  //Êı×é["±±¾©"£¬"ÉÏº£"£¬¡£¡£¡£]
+ //   var cityArrays = Object.keys(aqiSourceData);  //æ•°ç»„["åŒ—äº¬"ï¼Œ"ä¸Šæµ·"ï¼Œã€‚ã€‚ã€‚]
     else if(pageState.nowGraTime==="week"){
-        var  dataNumsArray=Object.keys(aqiSourceData.±±¾©);//Êı×é£¬´æµÄÊÇÈÕÆÚ£¬´Ó"01-01"ÖÁ"03-31"
+        var  dataNumsArray=Object.keys(aqiSourceData.åŒ—äº¬);//æ•°ç»„ï¼Œå­˜çš„æ˜¯æ—¥æœŸï¼Œä»"01-01"è‡³"03-31"
         var tempMonth=dataNumsArray[0].slice(5,7);
         var weekInit= 5,weekCount=0;
         var datasum=0;
-        var sumArray=[];//Ã¿¸öÖÜµÄÌìÊı
-        for (var s=0;s<dataNumsArray.length-1;s++,weekInit++){//Çó3¸öÔÂ¹²¶àÉÙÖÜ
-            if(dataNumsArray[s].slice(5,7)===tempMonth){ //1ÔÂ·İ
+        var sumArray=[];//æ¯ä¸ªå‘¨çš„å¤©æ•°
+        for (var s=0;s<dataNumsArray.length-1;s++,weekInit++){//æ±‚3ä¸ªæœˆå…±å¤šå°‘å‘¨
+            if(dataNumsArray[s].slice(5,7)===tempMonth){ //1æœˆä»½
                 datasum=datasum+1;
                 if(weekInit%7==0){weekCount=weekCount+1;weekInit=0;sumArray[weekCount-1]=datasum;datasum=0;}
             }
             else{
-                if(dataNumsArray[s].slice(5,7)!==tempMonth &&(dataNumsArray[s+1].slice(5,7)===dataNumsArray[s].slice(5,7))){//2ÔÂ·İÁË
+                if(dataNumsArray[s].slice(5,7)!==tempMonth &&(dataNumsArray[s+1].slice(5,7)===dataNumsArray[s].slice(5,7))){//2æœˆä»½äº†
                     weekInit=(weekInit-1)%7+1;
                     datasum=datasum+1;
                     if((weekInit)%7==0){
@@ -133,8 +133,8 @@ function renderChart() {
 
         function weekDatas(){
             var cityBar={};
-            for (var keyss in aqiSourceData){// ÏëÒªµÃµ½Ò»¸ö cityBar;//ÓÃÓÚ´æ·Å¸÷³ÇÊĞµÄ¸÷insertHtml
-            // ¶ÔÏó£¬´æµÄÊÇ£º´Ó"01-01£º253"ÖÁ"03-31:65"
+            for (var keyss in aqiSourceData){// æƒ³è¦å¾—åˆ°ä¸€ä¸ª cityBar;//ç”¨äºå­˜æ”¾å„åŸå¸‚çš„å„insertHtml
+            // å¯¹è±¡ï¼Œå­˜çš„æ˜¯ï¼šä»"01-01ï¼š253"è‡³"03-31:65"
                 var keylength=Object.keys(aqiSourceData[keyss]);
                 var lens=keylength.length; //91
                 (function(m){
@@ -144,7 +144,7 @@ function renderChart() {
                     var barSizeIn=[];
                     var  heightArray=[];
                     for (var t in m){
-                        heightArray.push(m[t]);//Êı×é£¬´æ·Å91ÌìµÄm³ÇÊĞµÄ¸ß¶ÈÖµ
+                        heightArray.push(m[t]);//æ•°ç»„ï¼Œå­˜æ”¾91å¤©çš„måŸå¸‚çš„é«˜åº¦å€¼
                     }
                     for(var k= 0;k<weekCount;k++){
                         var barSizein = {};
@@ -159,13 +159,13 @@ function renderChart() {
                         k--;
                         barSizeIn.push(barSizein);
                     }
-                    //barsize[keyss]= barSizeIn;//Êı×é
+                    //barsize[keyss]= barSizeIn;//æ•°ç»„
                     for(var h=0;h<weekCount;h++){
                         insertHtml=insertHtml+"<div class='"+pageState.nowGraTime+"' style='height:"+ barSizeIn[h].height
                             +"px; width:"+ barSizeIn[h].width+"px; left:"+ barSizeIn[h].left+"px; background-color:"
                             +colorArray[Math.floor(Math.random()*14+0)]+"'></div>"
                         insertHtml=insertHtml+"<div class='aqi-hint"+"' style='bottom:"+ (barSizeIn[h].height+10)
-                            +"px; left:"+(barSizeIn[h].left+barSizeIn[h].leftRight-60)+"px;'> 2016ÄêµÚ"+h+"ÖÜ<br/> " +
+                            +"px; left:"+(barSizeIn[h].left+barSizeIn[h].leftRight-60)+"px;'> 2016å¹´ç¬¬"+h+"å‘¨<br/> " +
                             "[AQI]:"+ Math.floor(barSizeIn[h].height)+"</div>"
                     }
                     cityBar[keyss]=insertHtml;
@@ -178,7 +178,7 @@ function renderChart() {
 
     }
     if(pageState.nowGraTime==="month"){
-        var  dataNumsArray=Object.keys(aqiSourceData.±±¾©);//Êı×é£¬´æµÄÊÇÈÕÆÚ£¬´Ó"01-01"ÖÁ"03-31"
+        var  dataNumsArray=Object.keys(aqiSourceData.åŒ—äº¬);//æ•°ç»„ï¼Œå­˜çš„æ˜¯æ—¥æœŸï¼Œä»"01-01"è‡³"03-31"
        // var tempMonth=dataNumsArray[0].slice(5,7);
         var monthsNum=1;
         var monthsArray=[];
@@ -194,8 +194,8 @@ function renderChart() {
         monthsArray.push(monthsNum);
         function monthDatas(){
             var cityBar={};
-            for (var keyss in aqiSourceData){// ÏëÒªµÃµ½Ò»¸ö cityBar;//ÓÃÓÚ´æ·Å¸÷³ÇÊĞµÄ¸÷insertHtml
-                // ¶ÔÏó£¬´æµÄÊÇ£º´Ó"01-01£º253"ÖÁ"03-31:65"
+            for (var keyss in aqiSourceData){// æƒ³è¦å¾—åˆ°ä¸€ä¸ª cityBar;//ç”¨äºå­˜æ”¾å„åŸå¸‚çš„å„insertHtml
+                // å¯¹è±¡ï¼Œå­˜çš„æ˜¯ï¼šä»"01-01ï¼š253"è‡³"03-31:65"
                 var keylength=Object.keys(aqiSourceData[keyss]);
                 var lens=keylength.length; //91
                 (function(m){
@@ -205,7 +205,7 @@ function renderChart() {
                     var barSizeIn=[];
                     var  heightArray=[];
                     for (var t in m){
-                        heightArray.push(m[t]);//Êı×é£¬´æ·Å91ÌìµÄm³ÇÊĞµÄ¸ß¶ÈÖµ
+                        heightArray.push(m[t]);//æ•°ç»„ï¼Œå­˜æ”¾91å¤©çš„måŸå¸‚çš„é«˜åº¦å€¼
                     }
                     for(var k= 0;k<monthsArray.length;k++){
                         var barSizein = {};
@@ -220,14 +220,14 @@ function renderChart() {
                         k--;
                         barSizeIn.push(barSizein);
                     }
-                    //barsize[keyss]= barSizeIn;//Êı×é
+                    //barsize[keyss]= barSizeIn;//æ•°ç»„
                     for(var h=0;h<monthsArray.length;h++){
                         insertHtml=insertHtml+"<div class='"+pageState.nowGraTime+"' style='height:"+ barSizeIn[h].height
                             +"px; width:"+ barSizeIn[h].width+"px; left:"+ barSizeIn[h].left+"px; background-color:"
                             +colorArray[Math.floor(Math.random()*14+0)]+"'></div>"
                         insertHtml=insertHtml+"<div class='aqi-hint"+"' style='bottom:"+ (barSizeIn[h].height+10)
-                            +"px; left:"+(barSizeIn[h].left+barSizeIn[h].leftRight-60)+"px;'>2016ÄêµÚ"+
-                            h+"ÔÂ<br/> [AQI]:"+Math.floor(barSizeIn[h].height)+"</div>"
+                            +"px; left:"+(barSizeIn[h].left+barSizeIn[h].leftRight-60)+"px;'>2016å¹´ç¬¬"+
+                            h+"æœˆ<br/> [AQI]:"+Math.floor(barSizeIn[h].height)+"</div>"
                     }
                     cityBar[keyss]=insertHtml;
                     return cityBar[keyss];
@@ -245,23 +245,23 @@ function renderChart() {
 }
 
 /**
- * select·¢Éú±ä»¯Ê±µÄ´¦Àíº¯Êı
+ * selectå‘ç”Ÿå˜åŒ–æ—¶çš„å¤„ç†å‡½æ•°
  */
 function citySelectChange() {
-    // È·¶¨ÊÇ·ñÑ¡Ïî·¢ÉúÁË±ä»¯
+    // ç¡®å®šæ˜¯å¦é€‰é¡¹å‘ç”Ÿäº†å˜åŒ–
     var city = this.value;
     var divChart=document.getElementById("aqi-chart-wrap");
     if (city !== pageState.nowSelectCity) {
         pageState.nowSelectCity = city;
         var innerHtml = renderChart()[city];
         divChart.innerHTML = innerHtml;
-        // ÉèÖÃ¶ÔÓ¦Êı¾İ
-        // µ÷ÓÃÍ¼±íäÖÈ¾º¯Êı
+        // è®¾ç½®å¯¹åº”æ•°æ®
+        // è°ƒç”¨å›¾è¡¨æ¸²æŸ“å‡½æ•°
 
     }
 }
 /**
- * ´¦Àíä¯ÀÀÆ÷¼äµÄ²îÒì
+ * å¤„ç†æµè§ˆå™¨é—´çš„å·®å¼‚
  */
 var EventUtil = {
     addHandler: function (element, type, handler) {
@@ -275,10 +275,10 @@ var EventUtil = {
     }
 };
 /**
- * ÈÕ¡¢ÖÜ¡¢ÔÂµÄradioÊÂ¼şµã»÷Ê±µÄ´¦Àíº¯Êı
+ * æ—¥ã€å‘¨ã€æœˆçš„radioäº‹ä»¶ç‚¹å‡»æ—¶çš„å¤„ç†å‡½æ•°
  */
 function graTimeChange(inputi) {
-    // È·¶¨ÊÇ·ñÑ¡Ïî·¢ÉúÁË±ä»¯
+    // ç¡®å®šæ˜¯å¦é€‰é¡¹å‘ç”Ÿäº†å˜åŒ–
     var spanArr=document.getElementsByTagName("span");
     for(var i=0;i<spanArr.length;i++){
         spanArr[i].setAttribute("class"," ");
@@ -289,11 +289,11 @@ function graTimeChange(inputi) {
         pageState.nowGraTime=inputi.value;
     }
     renderChart();
-    // ÉèÖÃ¶ÔÓ¦Êı¾İ
-    // µ÷ÓÃÍ¼±íäÖÈ¾º¯Êı
+    // è®¾ç½®å¯¹åº”æ•°æ®
+    // è°ƒç”¨å›¾è¡¨æ¸²æŸ“å‡½æ•°
 }
 /**
- * ³õÊ¼»¯ÈÕ¡¢ÖÜ¡¢ÔÂµÄradioÊÂ¼ş£¬µ±µã»÷Ê±£¬µ÷ÓÃº¯ÊıgraTimeChange
+ * åˆå§‹åŒ–æ—¥ã€å‘¨ã€æœˆçš„radioäº‹ä»¶ï¼Œå½“ç‚¹å‡»æ—¶ï¼Œè°ƒç”¨å‡½æ•°graTimeChange
  */
 function initGraTimeForm() {
     var inputArr=document.getElementsByName("gra-time");
@@ -309,10 +309,10 @@ function initGraTimeForm() {
 window.onload=function(){
     EventUtil.addHandler(document.getElementById("aqi-chart-wrap"),'mouseover',function(event){
         var divAqi=event.target;
-        divAqi.nextSibling.className+=" show";  //Êó±êÒÆ¶¯µ½ÄÄ¸öÔªËØ£¬¸ÃÔªËØµÄĞÖµÜÔªËØ¼Óshow£¬Èô´ËÔªËØµÄclassÎª"aqi-hint show",
-        //¸ÃÆğ×÷ÓÃÁË£¬¸ø.aqi-hint .showÌí¼ÓĞ§¹û¡£×¢Òâ£º³öÏÖÁËÓĞ¸ö¸¡¶¯¿ò£¨ÕÚÕÖ²ã£©Ó°ÏìÁËÊó±ê¶ÔÔªËØµÄÑ¡È¡£¬ÎÒÃÇ½«.day,.week,.month{
-   //     z-index:1;}½«Öù×´ÒÆ¶¯µ½×îÉÏ±ß£¬.aqi-hint.show{ z-index:555;}¼´ËµÃ÷¿òÒÆ¶¯µ½Öù×ÓÉÏÃæÔÙ¼Ó¸öÍ¸Ã÷¶È¡£ÊµÏÖ£¬Êó±êÒÆ¶¯µ½Öù×ÓµÄÈÎÒâµØ·½£¬
-   // ¶¼¿ÉÒÔ´¥·¢ËµÃ÷¿òÊÂ¼ş¡£
+        divAqi.nextSibling.className+=" show";  //é¼ æ ‡ç§»åŠ¨åˆ°å“ªä¸ªå…ƒç´ ï¼Œè¯¥å…ƒç´ çš„å…„å¼Ÿå…ƒç´ åŠ showï¼Œè‹¥æ­¤å…ƒç´ çš„classä¸º"aqi-hint show",
+        //è¯¥èµ·ä½œç”¨äº†ï¼Œç»™.aqi-hint .showæ·»åŠ æ•ˆæœã€‚æ³¨æ„ï¼šå‡ºç°äº†æœ‰ä¸ªæµ®åŠ¨æ¡†ï¼ˆé®ç½©å±‚ï¼‰å½±å“äº†é¼ æ ‡å¯¹å…ƒç´ çš„é€‰å–ï¼Œæˆ‘ä»¬å°†.day,.week,.month{
+   //     z-index:1;}å°†æŸ±çŠ¶ç§»åŠ¨åˆ°æœ€ä¸Šè¾¹ï¼Œ.aqi-hint.show{ z-index:555;}å³è¯´æ˜æ¡†ç§»åŠ¨åˆ°æŸ±å­ä¸Šé¢å†åŠ ä¸ªé€æ˜åº¦ã€‚å®ç°ï¼Œé¼ æ ‡ç§»åŠ¨åˆ°æŸ±å­çš„ä»»æ„åœ°æ–¹ï¼Œ
+   // éƒ½å¯ä»¥è§¦å‘è¯´æ˜æ¡†äº‹ä»¶ã€‚
     });
     EventUtil.addHandler(document.getElementById("aqi-chart-wrap"),'mouseout',function(event){
         var divAqi=event.target;
@@ -320,10 +320,10 @@ window.onload=function(){
     });
 };
 /**
- * ³õÊ¼»¯³ÇÊĞSelectÏÂÀ­Ñ¡Ôñ¿òÖĞµÄÑ¡Ïî
+ * åˆå§‹åŒ–åŸå¸‚Selectä¸‹æ‹‰é€‰æ‹©æ¡†ä¸­çš„é€‰é¡¹
  */
 function initCitySelector() {
-    // ¶ÁÈ¡aqiSourceDataÖĞµÄ³ÇÊĞ£¬È»ºóÉèÖÃidÎªcity-selectµÄÏÂÀ­ÁĞ±íÖĞµÄÑ¡Ïî
+    // è¯»å–aqiSourceDataä¸­çš„åŸå¸‚ï¼Œç„¶åè®¾ç½®idä¸ºcity-selectçš„ä¸‹æ‹‰åˆ—è¡¨ä¸­çš„é€‰é¡¹
     var select=document.getElementById("city-select");
     var cityArrays = Object.keys(aqiSourceData);
     var options=cityArrays.map(function(item){
@@ -333,22 +333,22 @@ function initCitySelector() {
     var insertHtml=options.join(" ");
     select.innerHTML=insertHtml;
     pageState.nowSelectCity=cityArrays[0];
-    var divChart=document.getElementById("aqi-chart-wrap");//Èô´ËĞĞºÍÏÂÒ»ĞĞ²»Òª£¬ÔòÔÚË¢ĞÂÒ³ÃæÎªµã»÷Ç°£¬Ò³ÃæÎªÎŞÍ¼
+    var divChart=document.getElementById("aqi-chart-wrap");//è‹¥æ­¤è¡Œå’Œä¸‹ä¸€è¡Œä¸è¦ï¼Œåˆ™åœ¨åˆ·æ–°é¡µé¢ä¸ºç‚¹å‡»å‰ï¼Œé¡µé¢ä¸ºæ— å›¾
     divChart.innerHTML= renderChart()[cityArrays[0]];
-    // ¸øselectÉèÖÃÊÂ¼ş£¬µ±Ñ¡Ïî·¢Éú±ä»¯Ê±µ÷ÓÃº¯ÊıcitySelectChange
+    // ç»™selectè®¾ç½®äº‹ä»¶ï¼Œå½“é€‰é¡¹å‘ç”Ÿå˜åŒ–æ—¶è°ƒç”¨å‡½æ•°citySelectChange
     EventUtil.addHandler(select,'change', citySelectChange);
 }
 
 /**
- * ³õÊ¼»¯Í¼±íĞèÒªµÄÊı¾İ¸ñÊ½
+ * åˆå§‹åŒ–å›¾è¡¨éœ€è¦çš„æ•°æ®æ ¼å¼
  */
 //function initAqiChartData() {
-    // ½«Ô­Ê¼µÄÔ´Êı¾İ´¦Àí³ÉÍ¼±íĞèÒªµÄÊı¾İ¸ñÊ½
-    // ´¦ÀíºÃµÄÊı¾İ´æµ½ chartData ÖĞ
+    // å°†åŸå§‹çš„æºæ•°æ®å¤„ç†æˆå›¾è¡¨éœ€è¦çš„æ•°æ®æ ¼å¼
+    // å¤„ç†å¥½çš„æ•°æ®å­˜åˆ° chartData ä¸­
 //}
 
 /**
- * ³õÊ¼»¯º¯Êı
+ * åˆå§‹åŒ–å‡½æ•°
  */
 function init(){
     initGraTimeForm();
