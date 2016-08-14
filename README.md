@@ -1,7 +1,7 @@
 # secondStage
 百度前端技术学院地址：http://ife.baidu.com/task/all
 
-第二阶段任务Task016--Task032的Demo地址如下所示：
+第二阶段任务Task016---Task032的Demo地址如下所示：
 
 http://liuyanling.github.io/secondStage/task013.html
 
